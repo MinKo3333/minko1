@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eksempel 1</title>
     <style>
+        .title{text-align: center;}
         .title1{ background-color: #3CBA54; color: white;font-size: 150%;}
         .title2{ background-color: #4885ED;color: white;font-size: 150%;}
         .title3{ background-color: #DB3236;color: white;font-size: 150%;}
@@ -12,7 +13,9 @@
         .title5{ background-color: #36393F;color: white;font-size: 150%;}
         .content{ background-color: gainsboro; margin-bottom: 10px;}
         div{ width:50% ; padding: 10px}
-        
+        .bildet{display:flex ;align-items: center; padding:0; width:min-content
+        ;margin:auto}
+        button{height:min-content; }
     </style>
 </head>
 <body>
@@ -22,7 +25,7 @@
     <button>Grid layout</button>
 
     <h1>Eksempel 1</h1>
-    <div class="title1">Verktøy</div>
+    <div class="title1 title">Verktøy</div>
     <div class="content">
         <p>De to viktigste verktøyene vi skal bruke er disse:</p>
         <ul>
@@ -37,7 +40,7 @@
         <li>Nettleseren <a href="https://www.google.com/intl/no/chrome/">Google Chrome</a></li>
 </ul>
     </div>
-    <div class="title2">HTML</div>
+    <div class="title2 title">HTML</div>
     <div class="content">
         <p>Vi bruker HTML til å definere et dokument.</p>
         <ul>
@@ -51,7 +54,7 @@
         </ul>
     </div>
     
-    <div class="title3">CSS</div>
+    <div class="title3 title">CSS</div>
     <div class="content">
         <p>Vi bruker CSS til å style et dokument, altså farger, fonter, utseende og lignende.</p>
         <ul>
@@ -69,7 +72,7 @@
         </ul>
     </div>
 
-    <div class="title4">JavaScript</div>
+    <div class="title4 title">JavaScript</div>
     <div class="content">
         <p>Det viktigste vi skal lære er programmeringsspråket JavaScript. 
         Vi skal lære grunnleggende programmering ved å manipulere HTML- og CSS-kode
@@ -79,17 +82,28 @@
             <li><a href="https://www.w3schools.com/jsref/default.asp">W3Schools JavaScript Reference</a></li>
         </ul>
     </div>
-<div class="title5">Hode, kropp og ben</div>
-<div class="content" style="text-align: center; letter-spacing: 0px; ">
-<button>◀</button>
+<div class="title5 title">Hode, kropp og ben</div>
+<div class="content"" >
+
+
+<div class="bildet" >
+    <button>◀</button>
 <img src="https://getacademy.github.io/Eksempel1/img/head1.png">
 <button>▶</button><br>
-<button>◀</button>
+</div>
+
+<div class="bildet">
+    <button>◀</button>
 <img src="https://getacademy.github.io/Eksempel1/img/body1.png">
 <button>▶</button><br>
-<button>◀</button>
+</div>
+
+<div class="bildet">
+    <button>◀</button>
 <img src="https://getacademy.github.io/Eksempel1/img/legs1.png">
 <button>▶</button>
+
+</div>
 </div>
 </body>
 </html>

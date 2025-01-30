@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+
+<body>
+    <button onclick="add('Sverd')">Sverd</button>
+    <button onclick="add('Skjold')">Skjold</button>
+    <button onclick="add('Bue')">Bue</button>
+    <!--<button></button>
+    <button></button>
+    <button></button>
+    <button></button>-->
+    
+
+    <div id='inventory'>
+        Inventory:
+    </div>
+    <div id="inventory">
+        <div id="sword"></div>
+        <div id="shield"></div>
+        <div id="bow"></div>
+        <div id="rope"></div>
+        <div id="axe"></div>
+        <div id="__"></div>
+    </div>
+
+    <script>
+       /*let firstclick=true
+        function add(item){
+           
+            if (firstclick) {
+                document.getElementById('inventory').innerHTML+= item
+                firstclick=false
+            }
+            else{
+
+                document.getElementById('inventory').innerHTML+= ', '+ item
+            }
+        }*/
+
+        function add(item){
+            let inventory = document.getElementById('inventory')
+            if(inventory.innerHTML.includes(item)){ 
+                inventory.innerHTML 
+                = inventory.innerHTML.replace(item, '')
+                
+                                
+            }
+            else{
+               inventory.innerHTML+= item + ' '
+            }
+            
+        }
+        
+        
+    
+    </script>
+</body>
+</html>

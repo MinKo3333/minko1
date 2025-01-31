@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{ width: 100px; height: 100px; }
+        #inventory{
+            height:300px; width: auto;
+            background-color: antiquewhite; border: 5px solid black; border-radius: 10px }
+    </style>
+  
+
+</head>
+<body>
+    
+    
+    <button id="sverd" onclick="show('Sverd')" title="Sverd"><img src="고양이검.jpg" alt="Sverd"></button>
+    <button id="Skjold" onclick="show('Skjold')" title="Skjold"><img src="고양이방패.jpeg"></button>
+    <button id="Bue" onclick="show('Bue')" title="Bue"><img src="고양이화살.jpg" ></button>
+    
+
+    <div id="inventory" style="text-align: center;">
+        <div><h2>&lt;Inventory&gt;</h2></div>
+    </div>
+
+    <script>
+        /* 
+        inventory = document.getElementById('inventory').innerHTML
+
+        function show(item)
+        {
+            // let 
+            if(inventory.includes(item)){ 
+                inventory = inventory.replace(item,' ')
+
+            }
+            else{ 
+               
+            
+                inventory+= item
+
+            } 
+            
+        
+        }*/
+        
+        // Definerer en refaranse til HTMLelementet
+        inventoryElement = document.getElementById('inventory')
+        let swordImage = '<img src="고양이검.jpg">'
+        let shieldImage = '<img src="고양이방패.jpeg">'
+        let bowImage = '<img src="고양이화살.jpg">'
+        let image = ''
+
+        function show (item) {
+            // henter ut strengen som er i inventorye-HTMLlementet nå, når man klikker på knappen
+            
+            
+            if (item === 'Sverd') {
+                image = swordImage
+            } 
+            else if (item === 'Skjold'){
+                image = shieldImage
+            }
+            else if (item === 'Bue'){
+                image = bowImage
+            }
+
+            let inventory = inventoryElement.innerHTML
+            if(inventory.includes(image)) {
+                inventory = inventory.replace(image, ' ')
+            }
+            else {
+                inventory += image
+            }
+            
+            // Oppdaterer HTMLelementet
+            inventoryElement.innerHTML = inventory
+        }  
+
+    </script>
+
+</body>
+</html>

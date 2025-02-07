@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eksempel 1</title>
     <style>
-        .hovedbox{width: 600px; border: 1px solid gray; margin: 10px}
-        .title{ text-align: center; border: 1px solid gray ; padding:10px}
+        .hovedbox{width: 500px; border: 1px solid gray; margin: 10px; background-color: gainsboro;}
+        .title{ text-align: center; border: 1px solid gray ; padding:1%}
         .title1{ background-color: #3CBA54; color: white;font-size: 150%;}
         .title2{ background-color: #4885ED;color: white;font-size: 150%;}
         .title3{ background-color: #DB3236;color: white;font-size: 150%;}
         .title4{ background-color: #F4C20D;color: white;font-size: 150%;}
         .title5{ background-color: #36393F;color: white;font-size: 150%;}
-        .content{ background-color: gainsboro; ;width: 600px; }
+        .content{ background-color: gainsboro; ;width: 500px; }
      
         p{margin:0%}
-        
+        body {
+    margin-left: 20px;
+}
     </style>
 </head>
 <body>
@@ -279,6 +281,14 @@ function layout(layout){
        
         document.getElementById('container').style.flexDirection = 'column' 
     }
+    if(layout==='horisontal'){
+       
+       document.getElementById('container').style.flexFlow = 'row nowrap' 
+   }
+    if(layout==='grid'){
+       
+       document.getElementById('container').style.flexFlow = 'row wrap' 
+   }
 }
 
 

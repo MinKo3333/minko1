@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="bigger()">△</button>
+  <p id="number">1</p>
+  <button onclick="smaller()">▽</button>
+  <script>
+   
+ 
+   let numberElement = document.getElementById('number')
+
+   let result = document.getElementById('number').innerText
+    function bigger() {
+     
+     result = parseInt(numberElement)+1
+     numberElement.innerText = result
+     
+     
+    }
+
+    function smaller() {
+
+      result = parseInt(result)-1
+      numberElement.innerText = result
+
+    }
+
+    
+ /*
+   function count(type) {
+    let resultElement = document.getElementById('number');
+    let number = resultElement.innerText
+    if(type==='bigger') {
+      number = parseInt(number) + 1
+    }
+    else if(type === 'smaller'){
+      number = parseInt(number) - 1
+    }
+    resultElement.innerText = number
+   }
+*/
+  </script>
+</body>
+</html>

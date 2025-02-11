@@ -13,6 +13,10 @@
         .title4{ background-color: #F4C20D;color: white;font-size: 150%;}
         .title5{ background-color: #36393F;color: white;font-size: 150%;}
         .content{ background-color: gainsboro; ;width: 500px; }
+        .grid1{
+            display: grid;
+            grid-template-columns: auto auto;
+        }
      
         p{margin:0%}
         body {
@@ -271,23 +275,25 @@
 
 
 function layout(layout){
-    document.getElementById('container').style.display = 'flex'
+    
 
     if(layout==='ingen'){
+        document.getElementById('container').style.display = 'flex';
         document.getElementById('container').style=document.getElementById('container').style
     }
 
     if(layout==='vertikal'){
-       
+       document.getElementById('container').style.display = 'flex';
         document.getElementById('container').style.flexDirection = 'column' 
     }
     if(layout==='horisontal'){
-       
+       document.getElementById('container').style.display = 'flex';
        document.getElementById('container').style.flexFlow = 'row nowrap' 
    }
     if(layout==='grid'){
+        document.getElementById('container').style.display = 'grid'
+       document.getElementById('container').classList.add('grid1')
        
-       document.getElementById('container').style.flexFlow = 'row wrap' 
    }
 }
 

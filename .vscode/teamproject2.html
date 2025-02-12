@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        background-color: brown;
+         }
+      div{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        color:aliceblue
+      }
+      .buttonbox{flex-direction: row;}
+      .riddles{background-color: rgba(0, 0, 0, 0.568);}
+
+
+    </style>
+
+</head>
+
+<body>
+  
+    <!--Escape Room-spill hvor spilleren må løse en gåte for å "rømme" fra rommet. 
+    Spillet skal bruke if/else og følge MVC (Model-View-Controller)-mønsteret. Forslag til oppsett:
+Spilleren får en gåte, for eksempel "Hva er 2 + 2?"
+De må skrive inn riktig svar i et tekstfelt og trykke på en knapp
+Hvis svaret er riktig, åpnes døren og spilleren har vunnet 
+Hvis svaret er feil, får de en feilmelding og må prøve igjen
+Lag en spennende opplevelse med: ✔ Knapp(er) eller input-felt for å svare 
+på gåten ✔ En måte å gi tilbakemelding på (riktig eller feil) ✔ 
+En stil som passer stemningen (skummelt, futuristisk, mystisk, osv.)
+-->
+    <div id="entrance" style="display:block; background-image: url(gollumscave.jpg);background-size: cover; background-position: center;  height:100vh; width:100vw">
+    <div class="riddles">
+      <blockquote> What has roots as nobody sees,
+Is taller than trees,
+Up, up it goes,
+And yet never grows?</blockquote>
+      <input id="riddle1" type="text" maxlength="8">
+      <div class="buttonbox">
+        <button onclick="back()" >back</button>
+        <button onclick="action()" >action</button>
+        <button onclick="go()" >go</button>
+    </div>
+</div>
+    </div>
+    <div id="rom" style="display:none;  background-image: url(evilgollumriddles.avif); background-size: cover;  background-position: center; height:100vh; width:100vw"">
+     <div class="riddles">
+      <blockquote>Voiceless it cries,
+Wingless flutters,
+Toothless bites,
+Mouthless mutters.</blockquote>
+      <input id="riddle2" type="text" maxlength="8">
+      <div class="buttonbox">
+        <button onclick="back()" >back</button>
+        <button onclick="action()" >action</button>
+        <button onclick="go()" >go</button>
+       </div>
+      </div>
+    </div>
+
+    <div id="exit" style="display:none; background-image: url(exit.jpg); background-size: cover; background-position: center;  height:100vh; width:100vw"">
+    <div>
+      <div class="riddles" style="width: 100%;">
+      <blockquote>
+
+        Du har kommet til utgangen, men du må løse den siste gåten å gå ut av hullet: <br>
+        It cannot be seen, cannot be felt,
+        Cannot be heard, cannot be smelt.
+        It lies behind stars and under hills,
+        And empty holes it fills.
+        It comes out first and follows after,
+        Ends life, kills laughter."</blockquote>
+        
+        <div>
+            <input id="riddle3" type="text" maxlength="8">
+            <div class="buttonbox">
+              <button onclick="back()" >back</button>
+              <button onclick="action()" >action</button>
+              <button onclick="go()" >go</button>
+          </div>
+      </div>
+            
+        </div>
+    </div>
+  </div>
+  <audio controls autoplay loop style="position: absolute; right: 10px; top: 10px;">
+    <source src="https://kappa.vgmsite.com/soundtracks/lord-of-the-rings-the-fellowship-of-the-ring-howard-shore/fhlfqkiu/03%20The%20Shadow%20Of%20The%20Past.mp3"  >
+ </audio>
+
+
+
+    <script>
+        // Model
+        //var entrance
+        //var exit
+        //var a1
+        //var a2 //etc.
+        //var b1
+        //var trueAnswer //for gåte (hvis vi bruker det)
+        let room = 1
+        let answer
+        let solvedRiddle1 = false
+        let solvedRiddle2 = false
+        let solvedRiddle3 = false
+
+        
+
+        // View
+        // updateView()
+        function back() {
+            if (room > 1) {
+              room = room - 1 
+            }
+            
+            
+            if(document.getElementById('rom').style.display === 'block'){
+              document.getElementById('rom').style.display = 'none'
+              document.getElementById('entrance').style.display = 'block'
+            }
+            else if(document.getElementById('exit').style.display === 'block'){
+
+              document.getElementById('rom').style.display = 'block'
+              document.getElementById('entrance').style.display = 'none'
+              document.getElementById('exit').style.display = 'none'
+
+            }
+            else if(document.getElementById('entrance').style.display === 'block'){
+
+                    document.getElementById('entrance').style.display = 'block'
+
+}
+
+            `
+            "Du er fanget i en labyrint. <br> 
+            Du er i et tomt rom. Du kom fra sør, men et steinras har blokkert veien. <br>
+            Mot nord ser du en vegg. <br>
+            Mot vest ser du en dør. <br>
+            Mot øst ser du en dør."
+            
+            
+        `
+        }
+        // Controller
+        let answer1 = 'mountain'
+        let answer2 = 'wind'
+        let answer3 = 'darkness'
+
+
+        
+        function action() {
+          if (room === 1) {
+            let riddle1Element1 = document.getElementById('riddle1')
+            if(answer1 === riddle1Element1.value){
+              alert('Du har vunnet!')
+              solvedRiddle1 = true
+            }
+            else{
+              alert('Prøv igjen!')
+            }
+          } else if (room === 2) {
+            let riddle1Element2 = document.getElementById('riddle2')
+            if(answer2 === riddle1Element2.value){
+           
+              alert('Du har vunnet!')
+              solvedRiddle2 = true
+            }
+            else{
+              alert('Prøv igjen!')
+            }
+          } else {
+            let riddle1Element3 = document.getElementById('riddle3')
+            if(answer3 === riddle1Element3.value) {
+           
+              alert('Du har vunnet!')
+              solvedRiddle3 = true
+            }
+            else{
+              alert('Prøv igjen!')
+            }
+          }
+
+        }
+
+       
+
+        function go() {
+          if (room === 1 && !solvedRiddle1) {
+            alert("NEI TAKK!!!")
+            return
+          }
+          if (room === 2 && !solvedRiddle2) {
+            alert("NEI TAKK!!!")
+            return
+          }
+          if (room === 3 && !solvedRiddle3) {
+            alert("NEI TAKK!!!")
+            return
+          }
+
+          room = room + 1
+
+          if(document.getElementById('rom').style.display === 'block'){
+              document.getElementById('rom').style.display = 'none',
+              document.getElementById('exit').style.display = 'block'
+            }
+            else if(document.getElementById('exit').style.display === 'block'){
+
+              document.getElementById('exit').style.display = 'block'
+            }
+              
+
+            
+            else if(document.getElementById('entrance').style.display === 'block'){
+
+                    document.getElementById('entrance').style.display = 'none';
+                    document.getElementById('rom').style.display = 'block'
+            }
+                    
+        }
+
+  
+    </script>
+
+</body>
+
+</html>
